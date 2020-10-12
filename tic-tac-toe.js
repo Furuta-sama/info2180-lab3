@@ -25,6 +25,7 @@ window.onload = function() {
         })
         count = 1;
         status.innerHTML = "Move your mouse over a square and click to play an X or an O."
+        status.classList.remove.you-won;
     })
 
     for(var i= 0; i < squares.length; i++){
@@ -62,6 +63,7 @@ window.onload = function() {
         }
         if (checkWin(currentPlayer)){
             status.innerHTML = "Congratulations! " + currentPlayer + " is the Winner!";
+            status.classList.add.you-won;
         }
         else if (checkDraw()){
             status.innerHTML = "Draw! Please press New Game to restart";
