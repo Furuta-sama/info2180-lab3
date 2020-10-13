@@ -63,10 +63,13 @@ window.onload = function() {
         }
         if (checkWin(currentPlayer)){
             status.innerHTML = "Congratulations! " + currentPlayer + " is the Winner!";
-            status.classList.add.you-won;
+            status.classList.add("you-won");
+            endGame();
+
         }
         else if (checkDraw()){
             status.innerHTML = "Draw! Please press New Game to restart";
+            endGame();
         }
         count++;
     }
@@ -83,6 +86,12 @@ window.onload = function() {
         return [...squares].every(square => {
             return square.classList.contains("X") || square.classList.contains("O");
         })
-     }
+    }
+
+    function endGame(){
+        squares.forEach(square =>{
+            square.removeEventListener("click", clickListener);
+        })
+    }
 }
 
