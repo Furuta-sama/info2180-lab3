@@ -25,7 +25,7 @@ window.onload = function() {
         })
         count = 1;
         status.innerHTML = "Move your mouse over a square and click to play an X or an O."
-        status.classList.remove.you-won;
+        status.classList.remove("you-won");
     })
 
     for(var i= 0; i < squares.length; i++){
